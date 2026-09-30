@@ -12,25 +12,12 @@
 @keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}@media(max-width:700px){.scene{min-height:100svh}.km .content{margin:0 auto;text-align:center}.km .copy{margin-left:auto}.gift-layout{grid-template-columns:1fr}.trunk{min-height:260px}.package-wrap{padding:12px}.scene-bg{object-position:center}.hero-cue{margin-top:15vh}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style>
-
 <style>
-.music-toggle{
-  position:fixed;right:16px;bottom:16px;z-index:999;
-  min-height:44px;padding:10px 15px;border:1px solid rgba(142,211,255,.65);
-  border-radius:999px;background:rgba(5,22,38,.9);color:#e6f6ff;
-  font:600 14px Arial,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.35);
-  backdrop-filter:blur(8px);cursor:pointer
-}
-.music-toggle.playing{background:rgba(21,72,105,.95)}
-@media(max-width:500px){.music-toggle{right:12px;bottom:12px;font-size:13px}}
-</style>
-</head>
+.music-toggle{position:fixed;right:16px;bottom:16px;z-index:999;min-height:44px;padding:10px 15px;border:1px solid rgba(142,211,255,.65);border-radius:999px;background:rgba(5,22,38,.9);color:#e6f6ff;font:600 14px Arial,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.35);backdrop-filter:blur(8px);cursor:pointer}.music-toggle.playing{background:rgba(21,72,105,.95)}@media(max-width:500px){.music-toggle{right:12px;bottom:12px;font-size:13px}}
+</style></head>
 <body>
 <button id="musicToggle" class="music-toggle" type="button" aria-label="Reproducir música">♪ Música</button>
-<audio id="bgMusic" preload="auto" loop>
-  <source src="as-it-was.mp3" type="audio/mpeg">
-</audio>
-
+<audio id="bgMusic" preload="auto" loop><source src="as-it-was.mp3" type="audio/mpeg"></audio>
 <section class="scene" id="hero">
 <img class="scene-bg" src="assets/hero.jpg" alt="Carretera nocturna con un Datsun 240Z verde y un auto azul"><div class="shade"></div><div class="road-glow"></div>
 <div class="content"><div class="tag">30 de septiembre</div><h1 class="title">¿Listo para dar una vuelta?</h1><p class="copy">Esta vez, el recorrido es para ti.</p><button class="btn" onclick="go('km1')">Encender motor →</button></div>
@@ -42,29 +29,13 @@
 <section class="scene" id="gift"><div class="content"><div class="tag">Hay algo en la cajuela...</div><h1 class="title">Una última parada</h1><p class="copy">Toca el regalo para descubrirlo.</p><div class="gift-layout"><div class="trunk"><div class="trunk-label">PARA TI</div><img class="bouquet" src="assets/bouquet.jpg" alt="Ramo de flores azules"></div><div class="package-wrap"><img class="package" id="pkg" src="assets/datsun_package.jpg" alt="Hot Wheels Datsun 240Z verde número 23"><div class="reveal-text" id="hint">El regalo está esperando...</div><button class="btn" id="openBtn">Abrir regalo →</button></div></div><div class="model hidden" id="model"><div class="tag">El modelo elegido</div><h2>Datsun 240Z</h2><p>Porque si había un coche que tenía que estar aquí, era este. 🏎️</p><button class="btn" onclick="go('final')">Última parada →</button></div></div></section>
 <section class="scene" id="final"><img class="scene-bg" src="assets/final.jpg" alt="Datsun 240Z verde y auto azul frente a las luces de la ciudad"><div class="shade"></div><div class="content"><div class="tag">Para ti</div><h1 class="final-title">Feliz día de los Hot Wheels</h1><div class="final-car">🏎️💙</div><p class="copy">Porque algunas personas llegan a tu vida y hacen que el recorrido se vuelva mucho más divertido.<br><br>Y si vamos a seguir dando vueltas, espero que sean muchas.</p><div class="signature">Con cariño 💙</div><button class="btn restart" onclick="go('hero')">Volver a dar una vuelta ↻</button></div></section>
 <script>function go(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})}const b=document.getElementById('openBtn'),p=document.getElementById('pkg'),h=document.getElementById('hint'),m=document.getElementById('model');b.addEventListener('click',()=>{p.classList.add('reveal');h.textContent='Sabía que este tenía que ser...';b.style.display='none';setTimeout(()=>m.classList.remove('hidden'),500)});</script>
-
 <script>
-(() => {
-  const music=document.getElementById("bgMusic");
-  const button=document.getElementById("musicToggle");
-  if(!music||!button)return;
-  button.addEventListener("click",async()=>{
-    try{
-      if(music.paused){
-        await music.play();
-        button.textContent="❚❚ Música";
-        button.classList.add("playing");
-        button.setAttribute("aria-label","Pausar música");
-      }else{
-        music.pause();
-        button.textContent="♪ Música";
-        button.classList.remove("playing");
-        button.setAttribute("aria-label","Reproducir música");
-      }
-    }catch(e){
-      button.textContent="♪ Toca para reproducir";
-    }
-  });
-})();
-</script>
-</body></html>
+(()=>{const m=document.getElementById("bgMusic"),b=document.getElementById("musicToggle");if(!m||!b)return;
+const on=()=>{b.textContent="❚❚ Música";b.classList.add("playing")},off=()=>{b.textContent="♪ Música";b.classList.remove("playing")};
+async function play(){try{await m.play();on();return true}catch(e){return false}}
+play();
+const unlock=async()=>{if(m.paused)await play();if(!m.paused){removeEventListener("pointerdown",unlock);removeEventListener("touchstart",unlock);removeEventListener("keydown",unlock)}};
+addEventListener("pointerdown",unlock,{passive:true});addEventListener("touchstart",unlock,{passive:true});addEventListener("keydown",unlock);
+b.addEventListener("click",async e=>{e.stopPropagation();if(m.paused)await play();else{m.pause();off()}});
+m.addEventListener("play",on);m.addEventListener("pause",off)})();
+</script></body></html>
