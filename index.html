@@ -1,63 +1,70 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#06101d">
-<title>Feliz día de los Hot Wheels 🏎️💙</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06101d"><title>30 de septiembre · Hot Wheels</title>
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:#030912;color:#fff}
-body{font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
-.page{width:100%;max-width:900px;margin:auto;position:relative}
-.art{display:block;width:100%;height:auto}
-.hotspot{position:absolute;display:block;text-decoration:none}
-#start{left:27%;top:8.2%;width:46%;height:4.5%}
-#km1{left:0;top:20%;width:100%;height:11%}
-#km2{left:0;top:31%;width:100%;height:11%}
-#km3{left:0;top:42%;width:100%;height:11%}
-#stop{left:75%;top:51%;width:24%;height:5%}
-#gift{left:50%;top:60%;width:48%;height:15%;transform:translateX(-50%)}
-#final{left:50%;top:91%;width:52%;height:5%;transform:translateX(-50%)}
-.cover{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.petal{position:absolute;width:10px;height:5px;background:#68d8ff;border-radius:100% 0 100% 0;opacity:.8;animation:float linear infinite}
-.p1{left:8%;top:14%;animation-duration:8s}.p2{left:82%;top:25%;animation-duration:11s}.p3{left:20%;top:48%;animation-duration:9s}.p4{left:88%;top:66%;animation-duration:10s}.p5{left:7%;top:83%;animation-duration:12s}
-@keyframes float{0%{transform:translate(0,0) rotate(0)}50%{transform:translate(22px,-35px) rotate(70deg)}100%{transform:translate(-8px,-75px) rotate(140deg);opacity:0}}
-@media(max-width:500px){
-  .page{max-width:none}
+:root{--bg:#030a12;--cyan:#6bdcff;--blue:#0c3352;--text:#f5fbff;--muted:#c0d0de;--gold:#d7b45d}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}.scene{min-height:100svh;position:relative;display:grid;place-items:center;overflow:hidden;background:#06101d}.scene-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(1.05) contrast(1.04)}.shade{position:absolute;inset:0;background:linear-gradient(180deg,#02071055 0%,#02071015 45%,#020710b8 100%)}.content{position:relative;z-index:2;width:min(760px,92%);text-align:center;padding:28px 0}.tag{font:700 .72rem Arial,sans-serif;letter-spacing:.25em;text-transform:uppercase;color:#8ddaff}.title{font-size:clamp(2.5rem,10vw,5.2rem);font-weight:400;line-height:1;margin:15px 0}.copy{font-size:1.08rem;line-height:1.7;color:var(--muted);max-width:570px;margin:0 auto 26px}.btn{border:1px solid #76d8ff;background:#0b3657dd;color:#fff;border-radius:999px;padding:14px 24px;min-height:50px;cursor:pointer;font:inherit;box-shadow:0 0 24px #38caff33;transition:.25s}.btn:hover{transform:translateY(-2px);background:#105079}.scrollhint{margin-top:15px;color:#7fc9eb;font:600 .72rem Arial;letter-spacing:.12em}.scene-nav{position:absolute;z-index:4;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:8px}.dot{width:8px;height:8px;border-radius:50%;background:#ffffff55}.dot.active{background:#72dfff;box-shadow:0 0 12px #72dfff}
+#hero .content{align-self:start;margin-top:10vh}.hero-cue{margin-top:22vh}.road-glow{position:absolute;bottom:8%;left:50%;width:70%;height:25%;transform:translateX(-50%);background:radial-gradient(ellipse,#55dfff2a,transparent 70%);pointer-events:none}.km .content{width:min(520px,90%);margin-left:auto;margin-right:4%;text-align:left}.km .copy{margin-left:0}.km-card{display:inline-block;background:#061322c9;border-left:3px solid var(--cyan);padding:12px 18px;border-radius:4px}.km-card strong{font:800 1.1rem Arial}.km-card span{display:block;font:700 .7rem Arial;letter-spacing:.18em;color:#8edcff;margin-top:4px}.km .btn{margin-top:5px}.station .content{max-width:600px}.station-card{background:#04111dcc;border:1px solid #73d8ff44;border-radius:26px;padding:30px 22px;backdrop-filter:blur(5px)}
+#gift{background:radial-gradient(circle at 50% 45%,#123d5d,#030a12 65%)}.gift-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;text-align:left}.trunk{position:relative;min-height:300px;border-radius:25px;background:linear-gradient(145deg,#06101a,#102a3c);border:1px solid #7cdfff33;overflow:hidden;box-shadow:0 25px 70px #0009}.trunk:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 20%,#7adfff12 50%,transparent 80%)}.trunk-label{position:absolute;top:22px;left:22px;font:700 .7rem Arial;letter-spacing:.2em;color:#8edcff}.bouquet{position:absolute;right:0;bottom:0;width:90%;height:72%;object-fit:cover;object-position:left center;mix-blend-mode:screen;opacity:.95}.package-wrap{text-align:center;background:#07121eaa;border:1px solid #ffffff1f;border-radius:25px;padding:18px;box-shadow:0 25px 70px #0008}.package{width:min(100%,330px);display:block;margin:auto;border-radius:8px;box-shadow:0 20px 45px #0009;transition:.8s;transform:scale(.88);opacity:.55}.package.reveal{transform:scale(1);opacity:1}.reveal-text{min-height:28px;color:#a9dfff;margin:12px 0;font-size:.95rem}.model{margin-top:18px;text-align:center}.model h2{font-size:clamp(2rem,8vw,3.6rem);font-weight:400;margin:8px 0}.model p{color:var(--muted);line-height:1.6}.hidden{display:none}.show{display:block;animation:rise .7s ease both}
+#final .content{max-width:700px}.final-title{font-size:clamp(2.4rem,10vw,4.7rem);font-weight:400;line-height:1}.final-car{font-size:5rem;margin:20px 0}.signature{font-style:italic;color:#8ddaff}.restart{margin-top:20px}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}@media(max-width:700px){.scene{min-height:100svh}.km .content{margin:0 auto;text-align:center}.km .copy{margin-left:auto}.gift-layout{grid-template-columns:1fr}.trunk{min-height:260px}.package-wrap{padding:12px}.scene-bg{object-position:center}.hero-cue{margin-top:15vh}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+
+<style>
+.music-toggle{
+  position:fixed;right:16px;bottom:16px;z-index:999;
+  min-height:44px;padding:10px 15px;border:1px solid rgba(142,211,255,.65);
+  border-radius:999px;background:rgba(5,22,38,.9);color:#e6f6ff;
+  font:600 14px Arial,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.35);
+  backdrop-filter:blur(8px);cursor:pointer
 }
-@media(prefers-reduced-motion:reduce){.petal{animation:none}}
+.music-toggle.playing{background:rgba(21,72,105,.95)}
+@media(max-width:500px){.music-toggle{right:12px;bottom:12px;font-size:13px}}
 </style>
 </head>
 <body>
-<main class="page" aria-label="Experiencia del 30 de septiembre">
-  <img class="art" src="mobile_storyboard.png" alt="Historia nocturna con un Datsun 240Z verde, un auto azul, flores azules y un regalo Hot Wheels">
-  <div class="cover" aria-hidden="true">
-    <span class="petal p1"></span><span class="petal p2"></span><span class="petal p3"></span>
-    <span class="petal p4"></span><span class="petal p5"></span>
-  </div>
-  <a class="hotspot" id="start" href="#km1" aria-label="Encender motor"></a>
-  <a class="hotspot" id="km1" href="#km2" aria-label="Kilómetro 1"></a>
-  <a class="hotspot" id="km2" href="#km3" aria-label="Kilómetro 2"></a>
-  <a class="hotspot" id="km3" href="#stop" aria-label="Kilómetro 3"></a>
-  <a class="hotspot" id="stop" href="#gift" aria-label="Continuar"></a>
-  <a class="hotspot" id="gift" href="#final" aria-label="Descubrir regalo"></a>
-  <a class="hotspot" id="final" href="#top" aria-label="Volver a dar una vuelta"></a>
-  <span id="top"></span>
-</main>
+<button id="musicToggle" class="music-toggle" type="button" aria-label="Reproducir música">♪ Música</button>
+<audio id="bgMusic" preload="auto" loop>
+  <source src="as-it-was.mp3" type="audio/mpeg">
+</audio>
+
+<section class="scene" id="hero">
+<img class="scene-bg" src="assets/hero.jpg" alt="Carretera nocturna con un Datsun 240Z verde y un auto azul"><div class="shade"></div><div class="road-glow"></div>
+<div class="content"><div class="tag">30 de septiembre</div><h1 class="title">¿Listo para dar una vuelta?</h1><p class="copy">Esta vez, el recorrido es para ti.</p><button class="btn" onclick="go('km1')">Encender motor →</button></div>
+</section>
+<section class="scene km" id="km1"><img class="scene-bg" src="assets/km1.jpg" alt="Datsun 240Z verde y auto azul en carretera nocturna"><div class="shade"></div><div class="content"><div class="km-card"><strong>KILÓMETRO 01</strong><span>EL COMIENZO</span></div><h2 class="title">Cuando comenzaste a formar parte de mi historia.</h2><p class="copy">Sin hacer demasiado ruido, terminaste ocupando un lugar que se siente muy bonito.</p><button class="btn" onclick="go('km2')">Seguir →</button></div></section>
+<section class="scene km" id="km2"><img class="scene-bg" src="assets/km2.jpg" alt="Dos autos recorriendo una carretera iluminada"><div class="shade"></div><div class="content"><div class="km-card"><strong>KILÓMETRO 02</strong><span>LOS PEQUEÑOS MOMENTOS</span></div><h2 class="title">Las pequeñas cosas también cuentan.</h2><p class="copy">Las conversaciones, las risas, los cambios de turno y todas esas pequeñas cosas que hacen este camino más especial.</p><button class="btn" onclick="go('km3')">Seguir →</button></div></section>
+<section class="scene km" id="km3"><img class="scene-bg" src="assets/km3.jpg" alt="Dos autos en una carretera junto al mar al atardecer"><div class="shade"></div><div class="content"><div class="km-card"><strong>KILÓMETRO 03</strong><span>LO QUE SIGUE</span></div><h2 class="title">Y todavía queda mucho camino.</h2><p class="copy">Porque contigo hasta los caminos largos se sienten más ligeros.</p><button class="btn" onclick="go('station')">Siguiente parada →</button></div></section>
+<section class="scene station" id="station"><img class="scene-bg" src="assets/station.jpg" alt="Datsun 240Z verde y auto azul estacionados en una gasolinera nocturna"><div class="shade"></div><div class="content"><div class="station-card"><div class="tag">Parada especial</div><h2 class="title">Haz una pausa.</h2><p class="copy">Hay momentos en el camino que vale la pena detenerse a disfrutar.</p><button class="btn" onclick="go('gift')">Continuar →</button></div></div></section>
+<section class="scene" id="gift"><div class="content"><div class="tag">Hay algo en la cajuela...</div><h1 class="title">Una última parada</h1><p class="copy">Toca el regalo para descubrirlo.</p><div class="gift-layout"><div class="trunk"><div class="trunk-label">PARA TI</div><img class="bouquet" src="assets/bouquet.jpg" alt="Ramo de flores azules"></div><div class="package-wrap"><img class="package" id="pkg" src="assets/datsun_package.jpg" alt="Hot Wheels Datsun 240Z verde número 23"><div class="reveal-text" id="hint">El regalo está esperando...</div><button class="btn" id="openBtn">Abrir regalo →</button></div></div><div class="model hidden" id="model"><div class="tag">El modelo elegido</div><h2>Datsun 240Z</h2><p>Porque si había un coche que tenía que estar aquí, era este. 🏎️</p><button class="btn" onclick="go('final')">Última parada →</button></div></div></section>
+<section class="scene" id="final"><img class="scene-bg" src="assets/final.jpg" alt="Datsun 240Z verde y auto azul frente a las luces de la ciudad"><div class="shade"></div><div class="content"><div class="tag">Para ti</div><h1 class="final-title">Feliz día de los Hot Wheels</h1><div class="final-car">🏎️💙</div><p class="copy">Porque algunas personas llegan a tu vida y hacen que el recorrido se vuelva mucho más divertido.<br><br>Y si vamos a seguir dando vueltas, espero que sean muchas.</p><div class="signature">Con cariño 💙</div><button class="btn restart" onclick="go('hero')">Volver a dar una vuelta ↻</button></div></section>
+<script>function go(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})}const b=document.getElementById('openBtn'),p=document.getElementById('pkg'),h=document.getElementById('hint'),m=document.getElementById('model');b.addEventListener('click',()=>{p.classList.add('reveal');h.textContent='Sabía que este tenía que ser...';b.style.display='none';setTimeout(()=>m.classList.remove('hidden'),500)});</script>
+
 <script>
-document.querySelectorAll('.hotspot').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const id=a.getAttribute('href');
-    if(id && id!=='#top'){
-      e.preventDefault();
-      document.querySelector(id)?.scrollIntoView({behavior:'smooth',block:'center'});
-    }else if(id==='#top'){
-      e.preventDefault();
-      window.scrollTo({top:0,behavior:'smooth'});
+(() => {
+  const music=document.getElementById("bgMusic");
+  const button=document.getElementById("musicToggle");
+  if(!music||!button)return;
+  button.addEventListener("click",async()=>{
+    try{
+      if(music.paused){
+        await music.play();
+        button.textContent="❚❚ Música";
+        button.classList.add("playing");
+        button.setAttribute("aria-label","Pausar música");
+      }else{
+        music.pause();
+        button.textContent="♪ Música";
+        button.classList.remove("playing");
+        button.setAttribute("aria-label","Reproducir música");
+      }
+    }catch(e){
+      button.textContent="♪ Toca para reproducir";
     }
   });
-});
+})();
 </script>
-</body>
-</html>
+</body></html>
